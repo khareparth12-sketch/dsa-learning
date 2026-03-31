@@ -1,5 +1,10 @@
 def bubbleSort(arr):
-    pass
+    for i in range(len(arr)-1, 0, -1):
+        for j in range(i):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                
+    return arr
 
 def selectionSort(arr):
     for i in range(len(arr)):
@@ -12,6 +17,16 @@ def selectionSort(arr):
     
     return arr
 
+def insertionSort(arr):
+    for i in range(len(arr)):
+        j = i
+        while (j>0 and arr[j-1]>arr[j]):
+            arr[j-1], arr[j] = arr[j], arr[j-1]
+            print(arr)
+            j -= 1
+
+    return arr
+
 n = list(map(int, input().split()))
-arr_sorted = selectionSort(n)
+arr_sorted = insertionSort(n)
 print(arr_sorted)
